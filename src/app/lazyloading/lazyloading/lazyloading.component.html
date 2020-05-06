@@ -1,0 +1,71 @@
+<p>lazyloading works!</p>
+
+
+<a routerLink="student">Student</a> |
+<a routerLink="student-detail">Student Details</a>
+<router-outlet></router-outlet>
+<!-- 
+<h4>Form Array - Is used to create new form controls dynamically</h4>
+
+<h2>Model Driven Forms</h2>
+
+<form [formGroup]="regForm" (ngSubmit)="regSubmit(regForm)" autocomplete="off">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name"
+            formControlName="firstName" />
+        <small *ngIf="regForm.controls['firstName'].touched && !regForm.controls['firstName'].valid"
+            class="form-text text-danger">
+
+            <span *ngIf="regForm.controls['firstName'].hasError('required')" class="form-text text-danger">Enter First
+                Name.</span>
+
+            <span *ngIf="regForm.controls['firstName'].hasError('minlength')" class="form-text text-danger">Minlength is
+                5.</span>
+
+            <span *ngIf="regForm.controls['firstName'].hasError('maxlength')" class="form-text text-danger">Maxlength is
+                10.</span>
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name"
+            formControlName="lastName" />
+        <small *ngIf="regForm.controls['lastName'].touched && !regForm.controls['lastName'].valid"
+            class="form-text text-danger">
+
+            <span *ngIf="regForm.controls['lastName'].hasError('required')" class="form-text text-danger">Enter Last
+                Name.</span>
+
+            <span *ngIf="regForm.controls['lastName'].hasError('minlength')" class="form-text text-danger">Minlength is
+                5.</span>
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+            formControlName="email" />
+        <small *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid"
+            class="form-text text-danger">Enter Email.</small>
+    </div>
+
+    <div class="form-group" formArrayName="mobilenos">
+        <label for="email">Mobile Number</label>
+        <span class="row">
+            <ng-container *ngFor="let mobileno of contactnos.controls; index as i">
+                <input type="email" class="form-control col-md-9 ml-5 mb-3" id="mobilenumber" name="mobilenumber"
+                    placeholder="Enter Mobile Number" [formControlName]="i" />
+                <button class="btn btn-small btn-primary col-md-2 ml-2 mb-3" (click)="deleteMobileno(idx)"
+                *ngIf="contactnos.controls?.length > 1">Delete</button>
+            </ng-container>
+        </span>
+        <div>
+            <button class="btn btn-small btn-primary col-md-2 ml-2 mb-3" (click)="addMobileno()">Add</button>
+        </div>
+        <small *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid"
+            class="form-text text-danger">Enter Email.</small>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Submit</button>
+</form> -->

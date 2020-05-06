@@ -1,0 +1,75 @@
+<p>eagerloading works!</p>
+
+
+<h2>Nested Form</h2>
+
+<form [formGroup]="regForm" (ngSubmit)="regSubmit(regForm)" autocomplete="off">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name"
+            formControlName="firstName" />
+        <!-- Validations start -->
+        <small *ngIf="regForm.controls['firstName'].touched && !regForm.controls['firstName'].valid"
+            class="form-text text-danger">
+
+            <!-- Fore Required Validation -->
+            <span *ngIf="regForm.controls['firstName'].hasError('required')" class="form-text text-danger">Enter First
+                Name.</span>
+
+            <!-- Fore minlength Validation -->
+            <span *ngIf="regForm.controls['firstName'].hasError('minlength')" class="form-text text-danger">Minlength is
+                5.</span>
+        </small>
+        <!-- Validations end -->
+    </div>
+
+    <!-- Address formGroup start -->
+    <div formGroupName="address">
+        <div class="form-group">
+            <label>House Number</label>
+            <input type="text" class="form-control" id="houseNo" name="houseNo" placeholder="Enter House Number"
+                formControlName="houseNo" />
+            <!-- Validations start -->
+            <small *ngIf="regForm.controls['address'].get('houseNo').touched && !regForm.controls['address'].get('houseNo').valid"
+                class="form-text text-danger">
+
+                <!-- Fore Required Validation -->
+                <span *ngIf="regForm.controls['address'].get('houseNo').hasError('required')"
+                    class="form-text text-danger">Enter House Number.</span>
+
+                <!-- Fore minlength Validation -->
+                <span *ngIf="regForm.controls['address'].get('houseNo').hasError('minlength')"
+                    class="form-text text-danger">Minlength is 5.</span>
+            </small>
+            <!-- Validations end -->
+        </div>
+        <!-- house number end -->
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter City"
+                formControlName="city" />
+            <!-- Validations start -->
+            <small *ngIf="regForm.controls['address'].get('city').touched && !regForm.controls['address'].get('city').valid"
+                class="form-text text-danger">
+                Enter City
+            </small>
+            <!-- Validations end -->
+        </div>
+        <!-- city end -->
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" id="country" name="country" placeholder="Enter Country"
+                formControlName="country" />
+            <!-- Validations start -->
+            <small *ngIf="regForm.controls['address'].get('country').touched && !regForm.controls['address'].get('country').valid"
+                class="form-text text-danger">
+                Enter Country
+            </small>
+            <!-- Validations end -->
+        </div>
+        <!-- city end -->
+    </div>
+    <!-- Address formGroup end -->
+
+    <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Submit</button>
+</form>

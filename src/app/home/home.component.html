@@ -1,0 +1,19 @@
+<p>home works!</p>
+
+<!-- <button class="btn btn-primary" (click)="getData()">Get Data</button>
+<button class="btn btn-primary" (click)="clearData()">Clear Data</button>
+{{myUsers}}
+ -->
+
+ {{msg}}
+
+<h2>Local storage</h2>
+<input type="text" name="" [(ngModel)]="array">
+<button type="button" (click)="addUser(array)">Add User</button>
+
+<h3>Users List</h3>
+<ul>
+  <li *ngFor="let item of myUsers">
+    {{ item }} <button type="button" (click)="removeitem(item)">X</button>
+  </li>
+</ul>

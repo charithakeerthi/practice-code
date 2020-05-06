@@ -1,0 +1,28 @@
+<p>templatedriven works!</p>
+<form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)" autocomplete="off">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name" ngModel
+            #firstName="ngModel" required />
+        <small *ngIf="firstName.touched && !firstName.valid" class="form-text text-danger">Enter First Name.</small>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name" ngModel
+            #lastName="ngModel" required />
+        <small *ngIf="lastName.touched && !lastName.valid" class="form-text text-danger">Enter Last Name.</small>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" ngModel
+            #email="ngModel" required />
+        <small *ngIf="email.touched && !email.valid" class="form-text text-danger">Enter Email.</small>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Submit</button>
+</form>
+
+{{formValues | json}}
+
+<div *ngIf="formValues">First Name: {{formValues.firstName}}</div>
+<div *ngIf="formValues">Last Name: {{formValues.lastName}}</div>
+<div *ngIf="formValues">Email: {{formValues.email}}</div>

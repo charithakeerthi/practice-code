@@ -1,0 +1,7 @@
+<p>data-parent works!</p>
+Enter Name: <input type="text" #pcomponent (keyup)="0">
+
+<app-data-child [pData]="pcomponent.value">
+    <h1>Hello</h1>
+    <div class="text-success">Hi</div>
+</app-data-child>
